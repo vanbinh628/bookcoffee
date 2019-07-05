@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity"
+    android:orientation="vertical"
+    >
+    <include
+        android:id="@+id/view_toolbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        layout="@layout/toolbar_center"
+        />
+    <com.google.android.material.tabs.TabLayout
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tablayout_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_toolbar_home"
+        android:background="#FFFF"
+        app:tabTextColor="#9b9b9b"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabSelectedTextColor="#114a7c"
+        app:tabIndicatorColor="#114a7c">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_activity"
+            android:text="Activity"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_history"
+            android:text="History"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content" />
+
+    </com.google.android.material.tabs.TabLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tablayout_order"
+        android:layout_above="@id/bottom_navigation_order">
+        <FrameLayout
+            android:id="@+id/frame_container_order"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/shape_select"
+        app:itemTextColor="@color/black85"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/navigation"
+        tools:ignore="MissingConstraints"
+        />
+
+</RelativeLayout>

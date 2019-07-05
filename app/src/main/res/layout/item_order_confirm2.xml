@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--<TextView-->
+        <!--android:id="@+id/text_number"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="1"-->
+        <!--android:layout_marginRight="@dimen/order_padding"-->
+        <!--android:background="@drawable/shape_buttn_border_green"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/text_name_info"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_toLeftOf="@+id/item_order_text_price"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@+id/text_number"-->
+        <!--android:text="Cappuchino [75% sugar, 50% ice]"/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/item_order_text_price"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="$3.5"/>-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/text_name_info"-->
+        <!--android:layout_alignParentLeft="false"-->
+        <!--android:layout_marginTop="6dp"-->
+        <!--android:layout_toRightOf="@id/text_number"-->
+        <!--android:text="@string/text_edit_2" />-->
+
+</RelativeLayout>

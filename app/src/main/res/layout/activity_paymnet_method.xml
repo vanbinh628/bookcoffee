@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/paleGrey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="650px">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/visa_card"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/shape_layout_border_top"
+        android:padding="@dimen/pay_padding">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pay_card_number"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4242 •••• •••• ••••"
+            android:textColor="@color/lightNavy"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_marginTop="@dimen/pay_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pay_card_holder"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thomas Cullen"
+            android:textColor="@color/lightNavy"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_marginTop="@dimen/pay_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pay_expired_date"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4/2"
+            android:textColor="@color/lightNavy"
+            android:textSize="18sp" />
+        <Button
+            android:layout_marginTop="@dimen/pay_padding"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:background="@drawable/shape_button_border"
+            android:text="@string/pay_select"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            />
+    </LinearLayout>
+
+</LinearLayout>

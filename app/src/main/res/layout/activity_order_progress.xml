@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/order_progress_padding"
+    android:paddingRight="@dimen/order_progress_padding"
+    android:paddingTop="15px"
+    android:background="@color/paleGrey"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/order_padding"
+            android:background="@drawable/shape_layout_border">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/text_order_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_no"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textColor="@color/black85"/>
+                <TextView
+                    android:id="@+id/order_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0001"
+                    android:layout_below="@id/text_order_id" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/bluishGreen"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="@string/order_in_progress"
+                    android:layout_alignParentRight="true" />
+                <RelativeLayout
+                    android:layout_below="@id/order_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="132px"
+                    android:background="@drawable/shape_bottom_border">
+                </RelativeLayout>
+            </RelativeLayout>
+            <TextView
+                android:layout_marginTop="18px"
+                android:layout_marginBottom="18px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_pickup_address"
+                android:fontFamily="@font/opensans_semibold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/order_padding"
+                    android:background="@drawable/shape_bottom_border">
+                    <ImageView
+                        android:layout_width="320px"
+                        android:layout_height="320px"
+                        android:src="@drawable/shop"/>
+                    <LinearLayout
+
+                        android:paddingLeft="36px"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="6">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0px"
+                            android:layout_weight="1"
+                            android:text="Name"
+                            android:textColor="@color/cocoa"
+                            />
+                        <TextView
+                            android:paddingTop="17px"
+                            android:layout_width="match_parent"
+                            android:layout_height="0px"
+                            android:layout_weight="4"
+                            android:text="Street 87/96 Ung Van Khiem - Ward 1 - District Binh Thanh - Ho Chi Minh City"
+                            android:textSize="10sp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0px"
+                            android:layout_weight="1"
+                            android:text="1.5 km away"
+                            android:textSize="@dimen/text_size_small"
+                            android:textAlignment="textEnd"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_take_away"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="23px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/order_padding"
+            android:paddingLeft="@dimen/order_padding"
+            android:background="@drawable/shape_layout_border">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_order"
+                android:layout_width="match_parent"
+                android:layout_height="315px"></androidx.recyclerview.widget.RecyclerView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="100px"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_marginLeft="60px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_total"
+                    android:textSize="@dimen/text_size_large"
+                    android:textColor="@color/lightNavy"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22.75"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/text_size_large"
+                    android:textColor="@color/lightNavy"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

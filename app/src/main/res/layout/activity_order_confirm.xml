@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abc"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="13"
+    android:background="@color/paleGrey">
+    <include
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        layout="@layout/custom_toolbar"
+        />
+    <ScrollView
+        android:id="@+id/bcd"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="10">
+
+        <LinearLayout
+            android:id="@+id/hdf"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingLeft="@dimen/order_padding"
+            android:paddingRight="@dimen/order_padding"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="18px"
+                android:layout_marginBottom="18px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_pickup_address"
+                android:fontFamily="@font/opensans_semibold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/order_padding"
+                android:background="@drawable/shape_layout_border">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/order_padding"
+                    android:weightSum="4"
+                    android:background="@drawable/shape_bottom_border">
+                    <ImageView
+                        android:layout_width="0px"
+                        android:layout_height="300px"
+                        android:layout_weight="1.2"
+                        android:src="@drawable/shop"/>
+                    <RelativeLayout
+
+                        android:paddingLeft="36px"
+                        android:layout_width="0px"
+                        android:layout_weight="2.8"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/tv_name_order_confirm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/cocoa"
+                            />
+                        <TextView
+                            android:id="@+id/tv_address_order_confirm"
+                            android:layout_below="@+id/tv_name_order_confirm"
+                            android:layout_above="@+id/tv_far"
+                            android:layout_marginTop="17px"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Street 87/96 Ung Van Khiem - Ward 1 - District Binh Thanh - Ho Chi Minh City"
+                            android:textSize="10sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_far"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:layout_alignParentBottom="true"
+                            android:textAlignment="textEnd"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="67px"
+                    android:orientation="horizontal"
+                    android:gravity="bottom"
+                    android:weightSum="10">
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        android:text="@string/order_take_away"/>
+                    <TextView
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/text_edit"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/lightNavy"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="26px"
+                android:layout_marginBottom="18px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+                <TextView
+
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:text="@string/order_items"/>
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textAlignment="textEnd"
+                    android:text="@string/text_delete"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:background="@drawable/shape_button_border_white">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:layout_marginTop="18px"
+                android:layout_marginBottom="18px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_payment"/>
+            <com.omega_r.libs.OmegaCenterIconButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_add_black_24dp"
+                android:drawablePadding="10dp"
+                android:background="@drawable/shape_layout_border"
+                android:textColor="@color/lightNavy"
+                android:text="@string/order_add_new_card"
+                android:textAllCaps="false"/>
+
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_button_border_white"
+                android:drawableLeft="@drawable/ic__visa_large"
+                android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
+                android:drawablePadding="50px"
+                android:text="abceesdsd"
+                android:textAlignment="textStart"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="2"
+        android:paddingLeft="55px"
+        android:paddingRight="55px"
+
+        android:background="@drawable/shape_layout_border_top">
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_total"
+            android:textSize="18sp"
+            android:textColor="@color/lightNavy"
+
+            />
+        <TextView
+            android:textAlignment="textEnd"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_total"
+            android:textSize="18sp"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/lightNavy"/>
+    </LinearLayout>
+    <com.omega_r.libs.OmegaCenterIconButton
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@color/lightNavy"
+        android:text="@string/order_place"
+        android:textColor="@color/white"
+        android:drawablePadding="10dp"
+        android:textSize="15sp"
+        android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="15">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="3"
+        android:background="@drawable/header_capuchino1"
+
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#90000000"
+            />
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/ic_back"
+            android:scaleType="fitStart"
+            android:layout_above="@+id/textContent"
+            android:background = "@null"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="coffe"
+            android:textColor="#FFF"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:layout_above="@+id/textContent"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/textContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" The Science of Delicious"
+            android:textColor="#FFF"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="11">
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="#FFFF"
+            android:text="$30.00"
+            android:textColor="@color/black85"
+            android:drawableLeft="@drawable/ic_order_selected"
+            android:paddingLeft="45dp"
+            android:paddingRight="45dp"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/lightNavy"
+            android:text="CONFIRM"
+            android:textColor="#FFFF"
+            android:drawableRight="@mipmap/icon_arrow_next"
+            android:paddingLeft="45dp"
+            android:paddingRight="45dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
