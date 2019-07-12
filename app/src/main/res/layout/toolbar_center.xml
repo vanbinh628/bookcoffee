@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/shape_bottom_border"
     android:layout_height="150px"
     >
     <TextView
@@ -12,5 +12,6 @@
         android:textSize="@dimen/text_size_large"
         android:fontFamily="@font/opensans_semibold"
         android:textColor="@color/black85"
-        android:text="Order"/>
+        android:text="Order"
+        />
 </RelativeLayout>

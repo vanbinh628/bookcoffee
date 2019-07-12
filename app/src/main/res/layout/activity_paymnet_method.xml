@@ -4,14 +4,12 @@
     android:background="@color/paleGrey"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="650px">
+
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_image_card"
             android:src="@drawable/visa_card"/>
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,7 +54,7 @@
         <Button
             android:layout_marginTop="@dimen/pay_padding"
             android:layout_width="match_parent"
-            android:layout_height="100px"
+            android:layout_height="@dimen/height_Button_select"
             android:background="@drawable/shape_button_border"
             android:text="@string/pay_select"
             android:textColor="@color/white"

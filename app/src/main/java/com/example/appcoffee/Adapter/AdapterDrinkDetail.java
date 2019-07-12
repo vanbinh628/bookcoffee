@@ -1,4 +1,4 @@
-package com.example.appcoffee.Activity;
+package com.example.appcoffee.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

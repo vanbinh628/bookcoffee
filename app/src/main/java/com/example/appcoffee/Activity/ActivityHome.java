@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.appcoffee.Fragment.FragmentHistory;
+import com.example.appcoffee.Fragment.FragmentOrder;
 import com.example.appcoffee.Fragment.FragmentHome;
 import com.example.appcoffee.Fragment.FragmentRecycleViewDrink;
 import com.example.appcoffee.R;
@@ -41,7 +40,7 @@ public class ActivityHome extends AppCompatActivity {
                         loadFragment(fragment);
                         return;
                     case 1:
-                        fragment = new FragmentHistory();
+                        fragment = new FragmentOrder();
                         loadFragment(fragment);
                         return;
                     case 2:
@@ -75,7 +74,7 @@ public class ActivityHome extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_history:
-                    fragment = new FragmentHistory();
+                    fragment = new FragmentOrder();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_user:

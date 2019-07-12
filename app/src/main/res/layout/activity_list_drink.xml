@@ -75,10 +75,11 @@
             android:layout_height="match_parent"
             android:background="@color/lightNavy"
             android:text="CONFIRM"
+            android:textSize="@dimen/text_size"
             android:textColor="#FFFF"
             android:drawableRight="@mipmap/icon_arrow_next"
-            android:paddingLeft="45dp"
-            android:paddingRight="45dp"/>
+            android:paddingLeft="80px"
+            android:paddingRight="80px"/>
 
     </LinearLayout>
 

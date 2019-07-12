@@ -4,62 +4,26 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.appcoffee.Fragment.FragmentOrder;
 import com.example.appcoffee.Fragment.FragmentHome;
+import com.example.appcoffee.Fragment.FragmentProfile;
 import com.example.appcoffee.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
 
-public class ActivityBottomBar extends AppCompatActivity {
-    private ActionBar toolbar;
+public class ActivityBottomMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_layout);
+        setContentView(R.layout.activity_bottom_menu);
+        getSupportActionBar().hide();
 
-        toolbar = getSupportActionBar();
-
-        BottomNavigationView navigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        BottomNavigationView navigationView = (BottomNavigationView)findViewById(R.id.tab_bottom_navigation_menu);
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        TabLayout tabLayout = (TabLayout)findViewById(R.id.tablayout);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                Fragment fragment;
-                switch (tab.getPosition()){
-                    case 0:
-                        fragment = new FragmentHome();
-                        toolbar.setTitle("Drink");
-                        loadFragment(fragment);
-                        return;
-                    case 1:
-                        fragment = new FragmentOrder();
-                        toolbar.setTitle("Breakfast");
-                        loadFragment(fragment);
-                        return;
-                    case 2:
-                        toolbar.setTitle("Dessert");
-                        return;
-
-
-                }
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+        navigationView.setSelectedItemId(R.id.navigation_home);
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -71,17 +35,14 @@ public class ActivityBottomBar extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     fragment = new FragmentHome();
-                    toolbar.setTitle("home");
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_history:
                     fragment = new FragmentOrder();
-                    toolbar.setTitle("History");
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_user:
-                    fragment = new FragmentHome();
-                    toolbar.setTitle("User");
+                    fragment = new FragmentProfile();
                     loadFragment(fragment);
                     return true;
             }
@@ -90,7 +51,7 @@ public class ActivityBottomBar extends AppCompatActivity {
     };
     private void loadFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container,fragment);
+        transaction.replace(R.id.fm_bottom_menu,fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }

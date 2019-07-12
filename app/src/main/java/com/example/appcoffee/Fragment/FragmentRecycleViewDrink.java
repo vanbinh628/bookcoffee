@@ -11,8 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appcoffee.Activity.ActivityTestRecycleView;
-import com.example.appcoffee.Activity.AdapterDrinkDetail;
+import com.example.appcoffee.Adapter.AdapterDrinkDetail;
 import com.example.appcoffee.Model.DrinkDetail;
 import com.example.appcoffee.R;
 import com.example.appcoffee.RecyclerViewMargin;

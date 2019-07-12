@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="horizontal">
     <LinearLayout
+        android:id="@+id/view_color_item_info"
         android:layout_width="16px"
         android:layout_height="match_parent"
-        android:background="@drawable/shape_item_border_left">
+        android:background="@drawable/shape_item_border_left"
+        tools:ignore="Orientation">
 
     </LinearLayout>
     <LinearLayout
@@ -19,12 +23,14 @@
         android:orientation="vertical"
         android:background="@drawable/shape_layout_border_right">
         <TextView
+            android:id="@+id/tv_name_item_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name of branch"
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/black85"/>
         <TextView
+            android:id="@+id/tv_address_item_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/wramGreyTwo"
@@ -38,6 +44,7 @@
             android:orientation="horizontal"
             android:weightSum="10">
             <TextView
+                android:id="@+id/tv_datetime_item_info"
                 android:layout_width="0px"
                 android:layout_weight="7"
                 android:layout_height="wrap_content"
@@ -45,6 +52,7 @@
                 android:text="20/05/2019, 12:00"
                 />
             <TextView
+                android:id="@+id/tv_price_item_info"
                 android:textAlignment="textEnd"
                 android:layout_width="0px"
                 android:layout_weight="3"
