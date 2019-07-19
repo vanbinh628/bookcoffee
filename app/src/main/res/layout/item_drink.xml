@@ -22,11 +22,11 @@
         android:text="Locally"
         />
     <ImageView
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/iv_item_drink"
         android:layout_width="400px"
         android:layout_height="400px"
-        android:src="@drawable/coffee1"/>
+        android:src="@drawable/coffee1" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100px">

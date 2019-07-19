@@ -19,15 +19,15 @@
             <ImageView
                 android:id="@+id/image_drink"
                 android:layout_width="match_parent"
-                android:layout_height="628px"
+                android:layout_height="210dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/splash1" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400px"
+                android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:paddingTop="33px"
+                android:paddingTop="10dp"
                 android:weightSum="10">
 
                 <LinearLayout
@@ -40,7 +40,7 @@
                         android:id="@+id/text_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="42px"
+                        android:layout_marginLeft="@dimen/order_detail_margin"
                         android:fontFamily="@font/opensans_semibold"
                         android:text="capuchino"
                         android:textColor="@color/black85"
@@ -50,7 +50,7 @@
                         android:id="@+id/text_information"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="42px"
+                        android:layout_marginLeft="@dimen/order_detail_margin"
                         android:fontFamily="sans-serif"
                         android:text="@string/content_text"
                         android:textStyle="italic" />
@@ -60,7 +60,7 @@
                     android:id="@+id/text_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="42px"
+                    android:layout_marginLeft="@dimen/order_detail_margin"
                     android:fontFamily="@font/opensans_semibold"
                     android:text="+$6.0"
                     android:textColor="@color/bluishGreen"
@@ -79,7 +79,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90px"
+                android:layout_height="30dp"
                 android:gravity=""
                 android:layout_weight="20"
                 android:paddingLeft="@dimen/list_drink_margin_left"

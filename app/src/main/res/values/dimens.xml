@@ -10,9 +10,10 @@
     <dimen name="text_size_toolbar_large">24sp</dimen>
     <dimen name="text_size_small">9sp</dimen>
     <dimen name="list_drink_margin_left">42px</dimen>
-    <dimen name="order_padding">30px</dimen>
-    <dimen name="pay_padding">40px</dimen>
-    <dimen name="order_progress_padding">30px</dimen>
+    <dimen name="order_padding">12dp</dimen>
+    <dimen name="pay_padding">16dp</dimen>
+    <dimen name="order_progress_padding">12dp</dimen>
     <dimen name="height_Button_select">40dp</dimen>
-    <dimen name="height_image_card">650px</dimen>
+    <dimen name="height_image_card">150dp</dimen>
+    <dimen name="order_detail_margin">14dp</dimen>
 </resources>

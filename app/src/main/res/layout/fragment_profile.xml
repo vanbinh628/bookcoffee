@@ -37,11 +37,12 @@
             android:text="@string/profile_name"
             android:textSize="@dimen/text_size_profile" />
         <TextView
-            android:textAlignment="textEnd"
+            android:id="@+id/tv_name_profile"
+            android:textAlignment="viewEnd"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Name"
+            android:text="Alexander"
             android:textSize="@dimen/text_size_profile"/>
     </LinearLayout>
     <LinearLayout
@@ -61,11 +62,12 @@
             android:text="@string/profile_phone"
             android:textSize="@dimen/text_size_profile" />
         <TextView
+            android:id="@+id/tv_phone_profile"
             android:textAlignment="textEnd"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Name"
+            android:text=""
             android:textSize="@dimen/text_size_profile"/>
     </LinearLayout>
     <LinearLayout
@@ -89,7 +91,7 @@
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Name"
+            android:text="alexander@five.agency "
             android:textSize="@dimen/text_size_profile"/>
     </LinearLayout>
     <LinearLayout
@@ -174,7 +176,7 @@
         android:orientation="horizontal"
         android:paddingLeft="@dimen/list_drink_margin_left"
         android:paddingRight="@dimen/list_drink_margin_left"
-        android:background="@drawable/shape_bottom_border">
+       >
 
         <TextView
             android:layout_width="wrap_content"

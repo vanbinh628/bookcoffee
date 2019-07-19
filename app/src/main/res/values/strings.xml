@@ -3,6 +3,8 @@
     <string name="content_text">is an espresso-based coffee drink that originated
 in Italy, and is traditionally prepared with steamed
 milk foam (microfoam)</string>
+    <string name="errorNetwork">No Internet or something error</string>
+
     <string name="title_activity_main2">Main2Activity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
