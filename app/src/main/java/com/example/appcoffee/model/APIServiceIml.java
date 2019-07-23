@@ -49,6 +49,7 @@ public class APIServiceIml {//lớp model lấy dữ liệu từ sever
             public void onResponse(Call<ProductList> call, Response<ProductList> response) {//nhận dữ liệu serve thanh công
                 try {
                     dataCallback.OnFetchSuccess(response.body().getProducts());//gọi hàm interface để đưa dữ liệu cho presenter
+                    Log.d("InRa", response.body().getProducts().get(0).getAddOn().get(0).getConfigs().get(1).getName().toString());
                 } catch (Exception e) {
                     dataCallback.OnFetchFault(e);
                 }

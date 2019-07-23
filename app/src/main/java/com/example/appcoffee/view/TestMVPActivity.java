@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appcoffee.R;
+import com.example.appcoffee.base.BaseActivity;
 import com.example.appcoffee.presenter.PresenterProduct;
 
 public class TestMVPActivity extends BaseActivity {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:paddingRight="@dimen/order_padding"
+    android:gravity="center_vertical"
+    android:layout_weight="20"
+    android:paddingLeft="@dimen/order_padding"
+    android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_name_item_config"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_price_item_config"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:textSize="15sp"
+            android:layout_weight="7"
+            android:gravity="end"
+             />
+
+        <CheckBox
+            android:id="@+id/cb_item_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:buttonTint="@color/bluishGreen"/>
+
+</LinearLayout>

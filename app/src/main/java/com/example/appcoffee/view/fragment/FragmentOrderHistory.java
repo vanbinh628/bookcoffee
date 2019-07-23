@@ -10,8 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appcoffee.R;
+import com.example.appcoffee.base.BaseFragment;
 import com.example.appcoffee.presenter.PresenterStoreItem;
-import com.example.appcoffee.view.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class FragmentOrderHistory extends BaseFragment {

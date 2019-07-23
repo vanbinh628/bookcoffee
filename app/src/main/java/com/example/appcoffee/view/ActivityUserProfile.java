@@ -6,6 +6,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appcoffee.R;
+import com.example.appcoffee.base.BaseActivity;
 import com.example.appcoffee.model.User;
 import com.example.appcoffee.presenter.FetchDataUserCallback;
 import com.example.appcoffee.presenter.PresenterUserProfile;

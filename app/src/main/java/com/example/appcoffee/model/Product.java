@@ -2,7 +2,13 @@ package com.example.appcoffee.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Product {
+
+    @SerializedName("add_on")
+    private List<AddOn> addOn;
+
     @SerializedName("created_at")
     private String created_at;
 
@@ -71,8 +77,6 @@ public class Product {
         this.name = name;
     }
 
-
-
     public void setStatus(String status) {
         this.status = status;
     }
@@ -105,8 +109,6 @@ public class Product {
         return name;
     }
 
-
-
     public String getStatus() {
         return status;
     }
@@ -117,5 +119,13 @@ public class Product {
 
     public String getUpdated_at() {
         return updated_at;
+    }
+
+    public void setAddOn(List<AddOn> addOn) {
+        this.addOn = addOn;
+    }
+
+    public List<AddOn> getAddOn() {
+        return addOn;
     }
 }

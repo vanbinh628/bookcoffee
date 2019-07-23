@@ -12,6 +12,7 @@
         android:layout_weight="12">
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -68,64 +69,9 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:gravity="center_vertical"
-                android:background="@color/white88"
-                android:paddingLeft="@dimen/list_drink_margin_left"
-                android:text="Size"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:id="@+id/tv_name_config_1"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycler_config_1"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:gravity="center_vertical"
-                android:background="@color/white88"
-                android:paddingLeft="@dimen/list_drink_margin_left"
-                android:text="Size"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:id="@+id/tv_name_config_2"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycler_config_2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:gravity="center_vertical"
-                android:background="@color/white88"
-                android:paddingLeft="@dimen/list_drink_margin_left"
-                android:text="Size"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:id="@+id/tv_name_config_3"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycler_config_3"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:gravity="center_vertical"
-                android:background="@color/white88"
-                android:paddingLeft="@dimen/list_drink_margin_left"
-                android:text="Size"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:id="@+id/tv_name_config_4"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recycler_config_4"/>
+
 
 
         </LinearLayout>
@@ -156,6 +102,7 @@
             android:src="@drawable/ic_plus"
             android:background="@null"/>
         <Button
+            android:id="@+id/btn_add"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"

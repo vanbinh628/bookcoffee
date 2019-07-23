@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.appcoffee.R;
+import com.example.appcoffee.base.BaseActivity;
 import com.example.appcoffee.model.Store;
 import com.example.appcoffee.presenter.FetchDataListStore;
 import com.example.appcoffee.presenter.PresenterStore;

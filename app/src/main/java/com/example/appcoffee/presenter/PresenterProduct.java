@@ -25,6 +25,7 @@ public class PresenterProduct extends BasePresenter {
     private AdapterProductDetail productAdapter;
     private List<Product> productsList;
     APIServiceIml apiServiceIml;//khai báo lớp API để thằng này chứa dữ liệu đưa lên view
+
     public PresenterProduct(Context context, RecyclerView recyclerView, MvpView mvpView) {
         super(context);
         apiServiceIml = new APIServiceIml();

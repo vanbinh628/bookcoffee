@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.appcoffee.R;
+import com.example.appcoffee.base.BaseFragment;
 import com.example.appcoffee.model.User;
 import com.example.appcoffee.presenter.FetchDataUserCallback;
 import com.example.appcoffee.presenter.PresenterUserProfile;
-import com.example.appcoffee.view.BaseFragment;
 
 public class FragmentProfile extends BaseFragment implements FetchDataUserCallback {
     TextView tvPhone;
