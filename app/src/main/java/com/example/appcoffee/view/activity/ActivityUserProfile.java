@@ -1,4 +1,4 @@
-package com.example.appcoffee.view;
+package com.example.appcoffee.view.activity;
 
 
 import android.os.Bundle;

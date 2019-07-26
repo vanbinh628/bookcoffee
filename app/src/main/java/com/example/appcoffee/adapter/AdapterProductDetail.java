@@ -1,11 +1,14 @@
 package com.example.appcoffee.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,9 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appcoffee.R;
 import com.example.appcoffee.model.Product;
+import com.example.appcoffee.view.activity.ActivityBottomMenu;
+import com.example.appcoffee.view.activity.ActivityOrderDetail;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class AdapterProductDetail extends RecyclerView.Adapter<AdapterProductDetail.ViewHolder> {
@@ -40,11 +46,16 @@ public class AdapterProductDetail extends RecyclerView.Adapter<AdapterProductDet
         holder.tvName.setText(arrayList.get(position).getName());
         holder.tvPrice.setText(String.valueOf(arrayList.get(position).getPrice()));
 
-        Picasso.Builder builder = new Picasso.Builder(context);
-        builder.downloader(new OkHttp3Downloader(context));
-        builder.build().load("https://lh3.googleusercontent.com/s5ecXrgDkTQvJzbZDKdLY322GBfobtMMy_i8e5Jo0ONn7ADK2BfXOGK75bVDpij-Uf3svWsas_UPfQBrzL2vPZPy1MinVxK8CA=w1600-rj")
-                .error(R.drawable.ic_launcher_foreground)
-                .into(holder.ivImage);
+        if(arrayList.get(position).getImg_url().trim().equals("") != true){
+            Picasso.Builder builder = new Picasso.Builder(context);
+            builder.downloader(new OkHttp3Downloader(context));
+            builder.build().load(arrayList.get(position).getImg_url())
+                    .error(R.drawable.no_image)
+                    .into(holder.ivImage);
+        }
+        else {
+            holder.ivImage.setImageResource(R.drawable.ic_launcher_background);
+        }
     }
 
     @Override
@@ -52,8 +63,8 @@ public class AdapterProductDetail extends RecyclerView.Adapter<AdapterProductDet
         return arrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView ivImage;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        ImageView ivImage,ivAdd;
         TextView tvName, tvType, tvPrice;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +72,19 @@ public class AdapterProductDetail extends RecyclerView.Adapter<AdapterProductDet
             tvName = (TextView)itemView.findViewById(R.id.tv_name_item_drink);
             tvType = (TextView)itemView.findViewById(R.id.tv_type_item_drink);
             tvPrice = (TextView)itemView.findViewById(R.id.tv_price_item_drink);
+            ivAdd = (ImageView)itemView.findViewById(R.id.iv_add_item_drink);
+            ivAdd.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = this.getPosition();
+//
+//            Intent intent = new Intent(context, ActivityOrderDetail.class);
+//            Product product = arrayList.get(position);
+//            intent.putExtra("Hello", product);
+            ActivityBottomMenu activityOrderDetail = (ActivityBottomMenu)context;
+            activityOrderDetail.SendProduct(arrayList.get(position));
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.example.appcoffee.network;
 
+import android.content.SharedPreferences;
+
 import com.example.appcoffee.model.ClientResponse;
 import com.example.appcoffee.model.ProductList;
 import com.example.appcoffee.model.StoreList;
@@ -10,6 +12,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 
 public interface GetDataService {
+
 
     @Headers({
             "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNhN2Y0OTU0LTk4ODgtNDgzMy05NTM1LTIzNmRkODJkYTE3ZCIsImlhdCI6MTU2MjcyNjI2Miwicm9sZSI6InVzZXIifQ.58Se-tZiarZAdVOfdKYJzMGMcPl_Q4LRFvoQygHrFHo",

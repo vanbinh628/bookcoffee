@@ -79,7 +79,6 @@ public class AdapterConfigSingle extends RecyclerView.Adapter<AdapterConfigSingl
         public void onClick(View view) {
            int position = this.getPosition();
            configList.get(position).setCheck(true);
-            Toast.makeText(context,String.valueOf(position),Toast.LENGTH_SHORT).show();
            for(int i=0; i<configList.size(); i++){
                if(i != position)
                    configList.get(i).setCheck(false);

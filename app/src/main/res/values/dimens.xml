@@ -9,8 +9,21 @@
     <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_size_toolbar_large">24sp</dimen>
     <dimen name="text_size_small">9sp</dimen>
-    <dimen name="list_drink_margin_left">42px</dimen>
+
+    <dimen name="size_12">12sp</dimen>
+    <dimen name="size_14">14sp</dimen>
+    <dimen name="size_16">16sp</dimen>
+    <dimen name="size_18">18sp</dimen>
+    <dimen name="size_24">24sp</dimen>
+    <dimen name="size_11">11sp</dimen>
+    <dimen name="size_10">10sp</dimen>
+    <dimen name="size_9">9sp</dimen>
+
+    <dimen name="profile_height">55dp</dimen>
+
+    <dimen name="list_drink_margin_left">14dp</dimen>
     <dimen name="order_padding">12dp</dimen>
+    <dimen name="order_padding_recycler">8dp</dimen>
     <dimen name="pay_padding">16dp</dimen>
     <dimen name="order_progress_padding">12dp</dimen>
     <dimen name="height_Button_select">40dp</dimen>

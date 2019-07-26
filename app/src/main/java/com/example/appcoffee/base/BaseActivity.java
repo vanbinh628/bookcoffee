@@ -27,7 +27,6 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
         progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressBar.setProgress(0);
         progressBar.setMax(100);
-        progressBar.show();
     }
 
     protected abstract void init(Bundle savedInstanceState);

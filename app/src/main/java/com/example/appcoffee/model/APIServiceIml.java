@@ -1,5 +1,6 @@
 package com.example.appcoffee.model;
 
+import android.content.SharedPreferences;
 import android.provider.ContactsContract;
 import android.util.Log;
 

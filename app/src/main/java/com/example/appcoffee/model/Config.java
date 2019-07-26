@@ -2,7 +2,9 @@ package com.example.appcoffee.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Config {
+import java.io.Serializable;
+
+public class Config implements Serializable {
     @SerializedName("name")
     private String name;
 

@@ -4,10 +4,10 @@
     <solid android:color="@color/bluishGreen"/>
 
     <padding
-        android:bottom="5px"
-        android:left="18px"
-        android:right="18px"
-        android:top="5px"/>
+        android:bottom="3dp"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="3dp"/>
     <corners
         android:bottomLeftRadius="2dp"
         android:bottomRightRadius="2dp"

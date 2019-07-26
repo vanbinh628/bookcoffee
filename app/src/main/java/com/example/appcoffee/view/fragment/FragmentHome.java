@@ -7,10 +7,13 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appcoffee.R;
 import com.example.appcoffee.base.BaseFragment;
+import com.example.appcoffee.other.RecyclerViewMargin;
 import com.example.appcoffee.presenter.PresenterProduct;
 import com.google.android.material.tabs.TabLayout;
 
@@ -24,8 +27,15 @@ public class FragmentHome extends BaseFragment {
 
         recyclerView = view.findViewById(R.id.recycler_home);
 
-        presenter = new PresenterProduct(getContext(),recyclerView,this);
+        presenter = new PresenterProduct(getContext(),this);
         presenter.fetchDataProductsCoffee();
+
+        LinearLayoutManager layoutManager = new GridLayoutManager(getContext(),2);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerViewMargin margin = new RecyclerViewMargin(40,2);
+        recyclerView.addItemDecoration(margin);
+
+        recyclerView.setAdapter(presenter.getProductAdapter());
 
         final TabLayout tabLayout = (TabLayout)view.findViewById(R.id.tab_layout_home);
         tabLayout.addOnTabSelectedListener(mOnTabSelectedListener);

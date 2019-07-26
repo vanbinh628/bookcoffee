@@ -2,9 +2,10 @@ package com.example.appcoffee.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Product {
+public class Product implements Serializable {
 
     @SerializedName("add_on")
     private List<AddOn> addOn;
@@ -43,6 +44,9 @@ public class Product {
 
     public Long getPrice() {
         return price;
+    }
+
+    public Product() {
     }
 
     public Product(String created_at, String currency, String id, String img_url, String name, Long price, String status, String type, String updated_at) {
@@ -127,5 +131,16 @@ public class Product {
 
     public List<AddOn> getAddOn() {
         return addOn;
+    }
+
+    @Override
+    public String toString() {
+        String mString = name +" [";
+        for(int i =0; i< getAddOn().size(); i++){
+            mString += getAddOn().get(i).toString()+", ";
+        }
+        mString += "]";
+
+        return mString;
     }
 }

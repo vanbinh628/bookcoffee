@@ -51,8 +51,6 @@ public class AdapterConfigMultiple extends RecyclerView.Adapter<AdapterConfigMul
         if(config.getPrice() != 0 && config.getPrice() != null){
             holder.tvPrice.setText(config.getPrice().toString());
         }
-        if(config.getCheck() != null)
-            holder.cbConfig.setChecked(config.getCheck());
 
     }
 
@@ -77,8 +75,11 @@ public class AdapterConfigMultiple extends RecyclerView.Adapter<AdapterConfigMul
         @Override
         public void onClick(View view) {
            int position = this.getPosition();
-           configList.get(position).setCheck(true);
-           notifyDataSetChanged();
+            if(((CheckBox) view).isChecked()){
+                configList.get(position).setCheck(true);
+            } else {
+                configList.get(position).setCheck(false);
+            }
         }
     }
 }
