@@ -32,6 +32,16 @@ public class PresenterCartUser{
         return true;
 
     }
+    public void deleteAllProduct(){
+        mListProductOrder.clear();
+        totalUserCart();
+        isEmptyUserCard();
+    }
+    public void updateProduct(int position, int quantity){
+        mListProductOrder.get(position).setQuantity(quantity);
+        mListProductOrder.get(position).handleCalculateTotal();
+        totalUserCart();
+    }
     public void addProductToUserCart(Product product, int quantity){
         ProductOrder productOrder = new ProductOrder(product, quantity);
         productOrder.handleCalculateTotal();

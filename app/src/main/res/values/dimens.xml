@@ -12,6 +12,7 @@
 
     <dimen name="size_12">12sp</dimen>
     <dimen name="size_14">14sp</dimen>
+    <dimen name="size_15">15sp</dimen>
     <dimen name="size_16">16sp</dimen>
     <dimen name="size_18">18sp</dimen>
     <dimen name="size_24">24sp</dimen>
@@ -29,4 +30,9 @@
     <dimen name="height_Button_select">40dp</dimen>
     <dimen name="height_image_card">150dp</dimen>
     <dimen name="order_detail_margin">14dp</dimen>
+
+    <dimen name="dialog_margin">30dp</dimen>
+    <dimen name="diaglog_padding">30dp</dimen>
+
+    <dimen name="registration_margin">30dp</dimen>
 </resources>

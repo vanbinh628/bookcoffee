@@ -35,7 +35,7 @@ public class PresenterOrderItems extends BasePresenter {
         this.mListProductOrder = listProductOrder;
         this.mHandleOrderItems = mHandleUserCart;
 
-        mAdapterUserCart = new AdapterUserCart(context,mListProductOrder);
+        mAdapterUserCart = new AdapterUserCart(context, mListProductOrder, mHandleUserCart);
     }
     public long calculatorTotal(){
         long total = 0;
@@ -49,9 +49,23 @@ public class PresenterOrderItems extends BasePresenter {
     public void updateRecycleView(){
         mAdapterUserCart.notifyDataSetChanged();
     }
-    public void updateQuantity(){
-
+    public void updateQuantity(int position, int quantity){
+        mListProductOrder.get(position).setQuantity(quantity);
+        mListProductOrder.get(position).handleCalculateTotal();
+        mHandleOrderItems.updateQuantity(position, quantity);
+        updateRecycleView();
+        calculatorTotal();
     }
+    public ProductOrder getProductOrder(int position){
+        return mListProductOrder.get(position);
+    }
+    public void deleteAllProduct(){
+        mHandleOrderItems.updateTotal(0);
+        mListProductOrder.clear();
+        updateRecycleView();
+        mHandleOrderItems.deleteAllItems();
+    }
+
 
 
 }

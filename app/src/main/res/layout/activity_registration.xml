@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white88"
+    android:padding="@dimen/order_padding">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_navigate_before_black_24dp"
+        android:background="@null"/>
+    <TextView
+        android:layout_marginTop="@dimen/registration_margin"
+        android:textColor="@color/black85"
+        android:textSize="@dimen/size_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_text"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <EditText
+            android:backgroundTint="@color/lightNavy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"/>
+        <EditText
+            android:backgroundTint="@color/lightNavy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"/>
+    </LinearLayout>
+    <Button
+        android:layout_marginTop="@dimen/registration_margin"
+        android:text="@string/registration_con"
+        android:background="@drawable/shape_button_border"
+        android:textColor="@color/white"
+        android:fontFamily="@font/opensans_semibold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

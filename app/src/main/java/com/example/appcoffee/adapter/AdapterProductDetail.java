@@ -2,6 +2,7 @@ package com.example.appcoffee.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +15,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.bumptech.glide.Glide;
 import com.example.appcoffee.R;
 import com.example.appcoffee.model.Product;
 import com.example.appcoffee.view.activity.ActivityBottomMenu;
 import com.example.appcoffee.view.activity.ActivityOrderDetail;
-import com.squareup.picasso.OkHttp3Downloader;
-import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.List;
@@ -47,14 +47,17 @@ public class AdapterProductDetail extends RecyclerView.Adapter<AdapterProductDet
         holder.tvPrice.setText(String.valueOf(arrayList.get(position).getPrice()));
 
         if(arrayList.get(position).getImg_url().trim().equals("") != true){
-            Picasso.Builder builder = new Picasso.Builder(context);
-            builder.downloader(new OkHttp3Downloader(context));
-            builder.build().load(arrayList.get(position).getImg_url())
+//            Picasso.Builder builder = new Picasso.Builder(context);
+//            builder.downloader(new OkHttp3Downloader(context));
+//            builder.build().load(arrayList.get(position).getImg_url())
+//                    .error(R.drawable.no_image)
+//                    .into(holder.ivImage);
+            Glide.with(context).load(arrayList.get(position).getImg_url())
                     .error(R.drawable.no_image)
                     .into(holder.ivImage);
         }
         else {
-            holder.ivImage.setImageResource(R.drawable.ic_launcher_background);
+            holder.ivImage.setImageResource(R.drawable.no_image);
         }
     }
 
@@ -73,6 +76,16 @@ public class AdapterProductDetail extends RecyclerView.Adapter<AdapterProductDet
             tvType = (TextView)itemView.findViewById(R.id.tv_type_item_drink);
             tvPrice = (TextView)itemView.findViewById(R.id.tv_price_item_drink);
             ivAdd = (ImageView)itemView.findViewById(R.id.iv_add_item_drink);
+
+            int height = Resources.getSystem().getDisplayMetrics().widthPixels;
+            ivImage.getLayoutParams().height = (int) (height*0.4);
+            ivImage.getLayoutParams().width =  (int) (height*0.4);
+            if(height <= 500){
+                ivImage.getLayoutParams().height = (int) (height*0.7);
+                ivImage.getLayoutParams().width =  (int) (height*0.7);
+            }
+
+
             ivAdd.setOnClickListener(this);
         }
 

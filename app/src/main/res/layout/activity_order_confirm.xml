@@ -94,7 +94,7 @@
                             android:id="@+id/tv_far1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1.5 km away"
+                            android:text="1.0 km away"
                             android:layout_alignParentBottom="true"
                             android:textAlignment="textEnd"/>
                     </RelativeLayout>
@@ -109,12 +109,14 @@
                     android:gravity="bottom"
                     android:weightSum="10">
                     <TextView
+                        android:id="@+id/tv_time_order_confirm"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="9"
                         android:text="@string/order_take_away"
                         android:textSize="@dimen/size_14"/>
                     <TextView
+                        android:id="@+id/tv_edit_time_order_confirm"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -139,6 +141,7 @@
                     android:layout_weight="8"
                     android:text="@string/order_items"/>
                 <TextView
+                    android:id="@+id/tv_delete_order_confirm"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"

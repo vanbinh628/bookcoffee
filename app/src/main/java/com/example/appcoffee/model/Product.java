@@ -137,8 +137,11 @@ public class Product implements Serializable {
     public String toString() {
         String mString = name +" [";
         for(int i =0; i< getAddOn().size(); i++){
-            mString += getAddOn().get(i).toString()+", ";
+            if(!getAddOn().get(i).toString().trim().equals("")) {
+                mString += getAddOn().get(i).toString() + ", ";
+            }
         }
+        mString = mString.substring(0, mString.length()-2);
         mString += "]";
 
         return mString;

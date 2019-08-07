@@ -1,6 +1,8 @@
 package com.example.appcoffee.view.fragment;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,10 +31,19 @@ public class FragmentHome extends BaseFragment {
 
         presenter = new PresenterProduct(getContext(),this);
         presenter.fetchDataProductsCoffee();
-
         LinearLayoutManager layoutManager = new GridLayoutManager(getContext(),2);
-        recyclerView.setLayoutManager(layoutManager);
         RecyclerViewMargin margin = new RecyclerViewMargin(40,2);
+
+
+        int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+        if(width <= 500){
+            layoutManager = new GridLayoutManager(getContext(),1);
+            margin = new RecyclerViewMargin(40,1);
+        }
+        Log.d("InRa",String.valueOf(width) +" xem nao");
+
+
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(margin);
 
         recyclerView.setAdapter(presenter.getProductAdapter());

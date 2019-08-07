@@ -4,15 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.widget.Toast;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appcoffee.R;
-import com.example.appcoffee.adapter.AdapterStoreDetail;
+import com.example.appcoffee.adapter.AdapterStoreBase;
 import com.example.appcoffee.base.BasePresenter;
 import com.example.appcoffee.model.APIServiceIml;
 import com.example.appcoffee.model.Store;
-import com.example.appcoffee.other.RecyclerViewMargin;
+import com.example.appcoffee.view.HandleStore;
 import com.example.appcoffee.view.MvpView;
 
 import java.util.ArrayList;
@@ -20,31 +19,27 @@ import java.util.List;
 
 public class PresenterStoreItem extends BasePresenter {
     MvpView mvpView;
-
+    HandleStore handleStore;
     RecyclerView.LayoutManager layoutManager;
-    RecyclerView recyclerView;
-    AdapterStoreDetail adapter;
+    AdapterStoreBase adapter;
     List<Store> storeList;
     APIServiceIml apiServiceIml;
 
+    public AdapterStoreBase getAdapter() {
+        return adapter;
+    }
 
     @SuppressLint("WrongConstant")
-    public PresenterStoreItem(Context context, RecyclerView recyclerView , MvpView mvpView) {
+    public PresenterStoreItem(Context context, MvpView mvpView, HandleStore handleStore) {
         super(context);
-        this.recyclerView = recyclerView;
         this.mvpView = mvpView;
+        this.handleStore = handleStore;
+
         apiServiceIml = new APIServiceIml();
-
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewMargin margin = new RecyclerViewMargin(30,1);
-        recyclerView.addItemDecoration(margin);
-
         storeList = new ArrayList<>();
-        adapter = new AdapterStoreDetail(context, storeList);
-        recyclerView.setAdapter(adapter);
+        adapter = new AdapterStoreBase(context, storeList, handleStore);
     }
+
 
     public void DeleteData(){
         storeList.clear();
@@ -58,6 +53,7 @@ public class PresenterStoreItem extends BasePresenter {
            public void OnFetchSuccess(List<Store> storeList1) {
                storeList.addAll(storeList1);
                adapter.notifyDataSetChanged();
+               handleStore.chooseStore(storeList.get(1));
                mvpView.hideLoading();
            }
 

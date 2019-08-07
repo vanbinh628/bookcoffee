@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_name_store_item_dialog"
+        android:text="Vincom Central Park"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_15"
+        android:fontFamily="@font/opensans_semibold"
+        android:textColor="@color/warmGrey"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/dialog_margin"
+        android:weightSum="10">
+        <TextView
+            android:id="@+id/tv_address_store_item_dialog"
+            android:textColor="@color/warmGrey"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="italic"
+            android:text="23 Nguyen Huu Canh St., Binh Thap Binh Thap Binh Thap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7.5"
+            />
+        <TextView
+            android:id="@+id/tv_far_store_item_dialog"
+            android:textColor="@color/warmGrey"
+            android:text="1.0 km"
+            android:textAlignment="textEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"/>
+
+
+    </LinearLayout>
+</LinearLayout>

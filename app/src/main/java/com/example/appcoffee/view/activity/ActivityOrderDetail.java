@@ -2,7 +2,11 @@ package com.example.appcoffee.view.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +24,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.appcoffee.R;
 import com.example.appcoffee.StringEvent;
 import com.example.appcoffee.adapter.AdapterConfigMultiple;
@@ -35,13 +41,14 @@ import java.util.List;
 
 public class ActivityOrderDetail extends BaseActivity implements View.OnClickListener {
     public PresenterProduct2 presenterProduct;
-    TextView tvNameConfig1, tvNameConfig2, tvNameConfig3, tvNameConfig4;
+    TextView tvName, tvPrice;
     RecyclerView recycler1, recycler2, recycler3, recycler4;
 
     LinearLayout layout;
     Button btnAdd;
     ImageButton iBtnAdd,iBtnSub;
     TextView tvQuantity;
+    ImageView image;
     private int quantity = 1;
 
     RecyclerView.LayoutManager layoutManager;
@@ -49,14 +56,18 @@ public class ActivityOrderDetail extends BaseActivity implements View.OnClickLis
     protected void init(Bundle savedInstanceState) {
 //        setContentView(R.layout.activity_order_detail);
         setContentView(R.layout.activity_order_detail_tam);
+        tvName = findViewById(R.id.tv_name_produc_order_detail);
+        tvPrice = findViewById(R.id.tv_price_order_detail);
         layout = findViewById(R.id.linear);
         btnAdd = findViewById(R.id.btn_add);
         iBtnAdd = findViewById(R.id.ibtn_add);
         iBtnSub = findViewById(R.id.ibtn_sub);
         tvQuantity = findViewById(R.id.tv_quantity);
-
+        image = findViewById(R.id.image_drink);
         iBtnSub.setOnClickListener(this);
         iBtnAdd.setOnClickListener(this);
+
+        Glide.with(getApplicationContext()).load(R.drawable.header_capuchino1).error(R.drawable.no_image).into(image);
 
 
         Intent intent = getIntent();
@@ -65,6 +76,8 @@ public class ActivityOrderDetail extends BaseActivity implements View.OnClickLis
         }
         final Product product = (Product) intent.getSerializableExtra(StringEvent.SEND_PRODUCT);
         Log.d("InRaProduct", product.getName());
+        tvName.setText(product.getName());
+        tvPrice.setText(product.getPrice().toString());
 
         ShowAddOnOfProduct(product.getAddOn());
 
@@ -89,12 +102,10 @@ public class ActivityOrderDetail extends BaseActivity implements View.OnClickLis
 
         bundle.putInt(StringEvent.RESULT_QUANTITY, quantity);
         bundle.putSerializable(StringEvent.RESULT_PRODUCT, product);
-
-
         intent.putExtras(bundle);
 //        intent.putExtra(StringEvent.RESULT_QUANTITY,quantity);
 //        intent.putExtra(StringEvent.RESULT_PRODUCT,product);
-        setResult(StringEvent.RESULT_OK,intent);
+        setResult(StringEvent.RESULT_ORDER_DETAIL,intent);
         finish();
 
     }

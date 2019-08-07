@@ -3,7 +3,15 @@
     <string name="content_text">is an espresso-based coffee drink that originated
 in Italy, and is traditionally prepared with steamed
 milk foam (microfoam)</string>
+    <string name="introducer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="errorNetwork">No Internet or something error</string>
+    <string name="mess_clear">list product is empty</string>
+    <string name="registration_text">Enter your phone number to continue:</string>
+    <string name="registration_con">Continue</string>
+    <string name="registration_verified">Enter verified code sent to:</string>
+    <string name="registration_send_again">Send again.</string>
+    <string name="registration_dont_rec">Don’t receive?</string>
+
 
     <string name="title_activity_main2">Main2Activity</string>
     <string name="tab_text_1">Tab 1</string>
@@ -34,6 +42,10 @@ milk foam (microfoam)</string>
     <string name="order_again">Order again</string>
     <string name="order_completed">Completed</string>
 
+    <!--dialog update-->
+    <string name="dialog_title">Update item</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_update">Update</string>
     <!--order_payment layout-->
     <string name="pay_card_number">Card number:</string>
     <string name="pay_card_holder">Card holder:</string>
@@ -45,5 +57,10 @@ milk foam (microfoam)</string>
     <string name="text_edit">edit</string>
     <string name="text_edit_2">Edit</string>
     <string name="text_delete">delete</string>
+
+    <string name="next">Next</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
 
 </resources>

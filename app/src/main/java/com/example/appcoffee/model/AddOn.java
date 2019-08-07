@@ -55,12 +55,15 @@ public class AddOn implements Serializable {
         for(int i=0; i< configs.size(); i++){
             if(configs.get(i).getCheck() != null && configs.get(i).getCheck()==true){
                 if(configs.get(i).getName() != null && configs.get(i).getName() != "" ){
-                    string += configs.get(i).getName() + " " + getName();
+                    string += configs.get(i).getName() + " " + getName() + ", ";
                 } else if(configs.get(i).getPercent() != null){
                     int percent = (int)(configs.get(i).getPercent()*100);
-                    string +=String.valueOf(percent)+"%" + " " + getName();
+                    string +=String.valueOf(percent)+"%" + " " + getName() + ", ";
                 }
             }
+        }
+        if(string.length() > 3){
+            string = string.substring(0, string.length()-2);
         }
         return string;
     }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/_imageButton"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/_name"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_weight="3"
+        />
+
+    <TextView
+        android:id="@+id/_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="store"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@id/_imageButton"
+        app:layout_constraintRight_toLeftOf="@id/_see_more"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="4"/>
+    <TextView
+        android:id="@+id/_see_more"
+        android:text="see more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_weight="4"/>
+    <TextView
+        android:id="@+id/_address"
+        android:text="address"
+        app:layout_constraintVertical_weight="4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toRightOf="@id/_imageButton"
+        app:layout_constraintTop_toBottomOf="@id/_name"
+        app:layout_constraintBottom_toTopOf="@id/_far"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <TextView
+        android:text="1.5km"
+        android:id="@+id/_far"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/_address"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

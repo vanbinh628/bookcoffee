@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.appcoffee.R;
 import com.example.appcoffee.StringEvent;
 import com.example.appcoffee.model.Product;
+import com.example.appcoffee.model.ProductOrder;
 import com.example.appcoffee.presenter.PresenterCartUser;
 import com.example.appcoffee.view.HandleUserCart;
 import com.example.appcoffee.view.fragment.FragmentHome;
@@ -44,6 +45,7 @@ public class ActivityBottomMenu extends AppCompatActivity implements HandleUserC
         tvPriceTotal = findViewById(R.id.tv_price_total);
         tvViewCart = findViewById(R.id.tv_view_card);
 
+
         mPresenterCartUser = new PresenterCartUser(this, this);
         mPresenterCartUser.isEmptyUserCard();
         BottomNavigationView navigationView = (BottomNavigationView)findViewById(R.id.tab_bottom_navigation_menu);
@@ -53,9 +55,7 @@ public class ActivityBottomMenu extends AppCompatActivity implements HandleUserC
         tvViewCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ActivityBottomMenu.this, ActivityOrderConfirm.class);
-                intent.putExtra(StringEvent.SEND_LIST_ORDER_ITEMS, (Serializable)mPresenterCartUser.getListProductOrder());
-                startActivity(intent);
+                sendListProduct(mPresenterCartUser.getListProductOrder());
             }
         });
 
@@ -86,6 +86,13 @@ public class ActivityBottomMenu extends AppCompatActivity implements HandleUserC
             return false;
         }
     };
+
+    public void sendListProduct(List<ProductOrder> listProduct){
+        Intent intent = new Intent(ActivityBottomMenu.this, ActivityOrderConfirm.class);
+        intent.putExtra(StringEvent.SEND_LIST_ORDER_ITEMS, (Serializable)listProduct);
+        startActivityForResult(intent,StringEvent.REQUEST_CODE_ORDER_CONFIRM);
+    }
+
     private void loadFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fm_bottom_menu,fragment);
@@ -96,14 +103,14 @@ public class ActivityBottomMenu extends AppCompatActivity implements HandleUserC
         Log.d("InRa",product.getName());
         Intent intent = new Intent(ActivityBottomMenu.this, ActivityOrderDetail.class);
         intent.putExtra(StringEvent.SEND_PRODUCT, product);
-        startActivityForResult(intent,StringEvent.REQUEST_CODE );
+        startActivityForResult(intent,StringEvent.REQUEST_CODE_ORDER_DETAIL);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == StringEvent.REQUEST_CODE){
-            if(resultCode == StringEvent.RESULT_OK){
+        if(requestCode == StringEvent.REQUEST_CODE_ORDER_DETAIL){
+            if(resultCode == StringEvent.RESULT_ORDER_DETAIL){
                 Bundle bundle = data.getExtras();
                 Product product = (Product)bundle.getSerializable(StringEvent.RESULT_PRODUCT);
                 int quantity = bundle.getInt(StringEvent.RESULT_QUANTITY);
@@ -116,8 +123,23 @@ public class ActivityBottomMenu extends AppCompatActivity implements HandleUserC
                 else {
                     Log.d("Error","Error Add product");
                 }
-//                Product product = (Product)data.getSerializableExtra(StringEvent.RESULT_PRODUCT);
-//                int quantity = (int)data.getIntExtra(StringEvent.RESULT_QUANTITY,0);
+            }
+        }
+        if(requestCode == StringEvent.REQUEST_CODE_ORDER_CONFIRM){
+            if(resultCode == StringEvent.RESULT_ORDER_CONFIRM_DELETE){
+                mPresenterCartUser.deleteAllProduct();
+            }
+            if(resultCode == StringEvent.RESULT_ORDER_CONFIRM){
+                Log.d("InRa","DaNhanData");
+                Bundle bundle = data.getExtras();
+                int position = bundle.getInt(StringEvent.RESULT_ORDER_CONFIRM_POSITION, -1);
+                int quantity = bundle.getInt(StringEvent.RESULT_ORDER_CONFIRM_QUANTITY, -1);
+                if(position != -1 && quantity != -1){
+                    mPresenterCartUser.updateProduct(position, quantity);
+                }
+                else {
+                    Log.d("InRa","Loi nhan data");
+                }
             }
         }
     }

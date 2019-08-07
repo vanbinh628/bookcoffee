@@ -15,20 +15,11 @@ import com.example.appcoffee.presenter.PresenterStoreItem;
 import com.google.android.material.tabs.TabLayout;
 
 public class FragmentOrderHistory extends BaseFragment {
-    RecyclerView recyclerView;
-    TabLayout tabLayout;
-    PresenterStoreItem presenterStoreItem;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_order, container, false);
-
-        recyclerView = view.findViewById(R.id.recycler_order);
-        presenterStoreItem = new PresenterStoreItem(getContext(), recyclerView, this);
-
-
-        tabLayout = (TabLayout)view.findViewById(R.id.tab_layout_order);
-        tabLayout.addOnTabSelectedListener(mOnTabSelectedListener);
 
         return view;
     }
@@ -37,11 +28,8 @@ public class FragmentOrderHistory extends BaseFragment {
         public void onTabSelected(TabLayout.Tab tab) {
             switch (tab.getPosition()){
                 case 0:
-                    presenterStoreItem.DeleteData();
                     return;
                 case 1:
-                    presenterStoreItem.DeleteData();
-                    presenterStoreItem.FetchData();
                     return;
 
 
